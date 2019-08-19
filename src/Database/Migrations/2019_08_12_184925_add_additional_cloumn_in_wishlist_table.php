@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddNotesColumnInCustomersTable extends Migration
+class AddAdditionalCloumnInWishlistTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddNotesColumnInCustomersTable extends Migration
      */
     public function up()
     {
-        Schema::table('customers', function (Blueprint $table) {
-            $table->text('notes')->nullable();
+        Schema::table('wishlist', function (Blueprint $table) {
+            $table->json('additional')->nullable();
         });
     }
 
@@ -25,7 +25,8 @@ class AddNotesColumnInCustomersTable extends Migration
      */
     public function down()
     {
-        Schema::table('customers', function (Blueprint $table) {
+        Schema::table('wishlist', function (Blueprint $table) {
+            //
         });
     }
 }
